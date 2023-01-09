@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famevest-Wallet</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background: black;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #212121;
+            color: #fff;
+            height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 20%;
+        }
+        
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-right a {
+            font-size: 1.3rem;
+        }
+        
+        .nav-name {
+            font-size: 2rem;
+            margin-left: 20px;
+            text-decoration: none;
+            color: #2c87f0;
+            font-weight: bold;
+        }
+        
+        .nav-button {
+            font-size: 14px;
+            margin-right: 50px;
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        .nav-button:last-of-type {
+            background-color: #42b72a;
+            color: #fff;
+            border-radius: 4px;
+            padding: 10px 30px;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .nav-button:hover {
+            text-decoration: underline;
+            transition: 2s;
+        }
+        
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-form input[type="text"] {
+            border: none;
+            font-size: 1.1rem;
+            padding: 10px;
+            width: 230px;
+            margin-right: 40px;
+            border-radius: 10px;
+        }
+    </style>
+    <nav>
+        <div class="nav-left">
+            <a class="nav-name" href="#">Famevest</a>
+        </div>
+        <div class="nav-right">
+            <form class="search-form">
+                <input type="text" placeholder="Search...">
+            </form>
+            <a class="nav-button" href="#">Docs</a>
+            <a class="nav-button" href="#">Features</a>
+            <a class="nav-button" href="#">Trends</a>
+            <a class="nav-button" href="#">Settings</a>
+            <a class="nav-button" href="#">Login</a>
+        </div>
+    </nav>
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            background-color: black;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 1.4rem;
+            color: white;
+        }
+        
+        .sidebar-item:hover {
+            background-color: #212121;
+            border-radius: 10px;
+        }
+        
+        .sidebar-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 20px;
+        }
+    </style>
+
+    <div class="sidebar">
+        <a href="myprofile.html">
+            <div class="sidebar-item">
+                <img src="/images/profile.png" alt=""> Profile
+            </div>
+        </a>
+        <a href="wallet.html">
+            <div class="sidebar-item">
+                <img src="/images/wallet.png" alt=""> Wallet
+            </div>
+        </a>
+        <a href="portfolio">
+            <div class="sidebar-item">
+                <img src="/images/portfolio.png" alt=""> Portfolio
+            </div>
+        </a>
+        <div class="sidebar-item">
+            <img src="/images/watchlist.png" alt=""> Watchlist
+        </div>
+        <div class="sidebar-item">
+            <img src="/images/inbox.png" alt=""> Inbox
+        </div>
+        <div class="sidebar-item">
+            <img src="/images/notes.png" alt=""> Notes
+        </div>
+        <div class="sidebar-item">
+            <img src="/images/more.png" alt=""> More
+        </div>
+    </div>
+
+    <style>
+        .maincontent {
+            margin-top: 75px;
+            margin-left: 210px;
+            height: 100%;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            margin-right: 100px;
+        }
+        
+        .balancebox {
+            width: 550px;
+            height: 150px;
+            background: #212121;
+            padding-left: 30px;
+            padding-top: 10px;
+            border-radius: 10px;
+        }
+        
+        .balancebox h1 {
+            color: #2c87f0;
+        }
+        
+        .amountcurrency {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .enteramount {
+            width: 100%;
+        }
+        
+        .enteramount input {
+            width: 100%;
+            height: 50px;
+            font-size: 1.3rem;
+            background: #212121;
+            border-radius: 10px;
+            padding-left: 10px;
+            color: white;
+        }
+        
+        .currencyselector {
+            height: 50px;
+            width: 100px;
+            font-size: 1.3rem;
+            margin-left: 17px;
+            background: black;
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .withdrawaddamount {
+            display: flex;
+            margin-top: 10px;
+        }
+        
+        .withdrawbutton button {
+            width: 290px;
+            height: 70px;
+            background-image: linear-gradient(to bottom right, #f61818, #9e00ff);
+            font-size: 2rem;
+            color: white;
+            font-weight: bold;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        
+        .addamountbutton button {
+            width: 290px;
+            height: 70px;
+            background-image: linear-gradient(to bottom right, #82FF6D, #00B8BA);
+            font-size: 2rem;
+            color: white;
+            font-weight: bold;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 40%;
+            color: white;
+        }
+        
+        td,
+        th {
+            border: 1px solid white;
+            text-align: left;
+            padding: 20px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #212121;
+        }
+        
+        th {
+            font-size: 1.3rem;
+        }
+        
+        .walletright {
+            right: 10%;
+        }
+    </style>
+
+    <div class="maincontent">
+        <div class="walletleft">
+            To start investing in creators add balance to your account
+            <div class="balancebox">
+                <h2>Balance available</h2>
+                <h1 color="blue">1385.32</h1>
+            </div>
+            <div class="amountcurrency">
+                <div class="enteramount">
+                    <input type="text" placeholder="Enter amount...">
+                </div>
+                <div class="currencyselect">
+                    <select class="currencyselector">
+                        <option value="USD">USD</option>
+                        <option value="INR">INR</option>
+                      </select>
+                </div>
+            </div>
+            <div class="withdrawaddamount">
+                <div class="withdrawbutton">
+                    <button>Withdraw</button>
+                </div>
+
+                <div class="addamountbutton">
+                    <button>Add Balance</button>
+                </div>
+            </div>
+        </div>
+        <div class="walletright">
+            <div class="balancehistory">
+                <table>
+                    <tr>
+                        <th>Timestamps</th>
+                        <th>Amount</th>
+                        <th>State</th>
+                    </tr>
+                    <tr>
+                        <td>13 days 4 hours ago</td>
+                        <td>2.54 Fcoin</td>
+                        <td>Added</td>
+                    </tr>
+                    <tr>
+                        <td>7 days 23 hours ago</td>
+                        <td>3.29 Fcoin</td>
+                        <td>Withdrawn</td>
+                    </tr>
+                    <tr>
+                        <td>13 days 4 hours ago</td>
+                        <td>2.54 Fcoin</td>
+                        <td>Added</td>
+                    </tr>
+                    <tr>
+                        <td>7 days 23 hours ago</td>
+                        <td>3.29 Fcoin</td>
+                        <td>Withdrawn</td>
+                    </tr>
+                    <tr>
+                        <td>13 days 4 hours ago</td>
+                        <td>2.54 Fcoin</td>
+                        <td>Added</td>
+                    </tr>
+                    <tr>
+                        <td>7 days 23 hours ago</td>
+                        <td>3.29 Fcoin</td>
+                        <td>Withdrawn</td>
+                    </tr>
+                    <tr>
+                        <td>13 days 4 hours ago</td>
+                        <td>2.54 Fcoin</td>
+                        <td>Added</td>
+                    </tr>
+                    <tr>
+                        <td>7 days 23 hours ago</td>
+                        <td>3.29 Fcoin</td>
+                        <td>Withdrawn</td>
+                    </tr>
+                    <tr>
+                        <td>13 days 4 hours ago</td>
+                        <td>2.54 Fcoin</td>
+                        <td>Added</td>
+                    </tr>
+                    <tr>
+                        <td>7 days 23 hours ago</td>
+                        <td>3.29 Fcoin</td>
+                        <td>Withdrawn</td>
+                    </tr>
+                    <tr>
+                        <td>13 days 4 hours ago</td>
+                        <td>2.54 Fcoin</td>
+                        <td>Added</td>
+                    </tr>
+                    <tr>
+                        <td>7 days 23 hours ago</td>
+                        <td>3.29 Fcoin</td>
+                        <td>Withdrawn</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

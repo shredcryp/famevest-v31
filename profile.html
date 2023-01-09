@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #212121;
+            color: #fff;
+            height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 20%;
+        }
+        
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-right a {
+            font-size: 1.3rem;
+        }
+        
+        .nav-name {
+            font-size: 2rem;
+            margin-left: 20px;
+            text-decoration: none;
+            color: #2c87f0;
+            font-weight: bold;
+        }
+        
+        .nav-button {
+            font-size: 14px;
+            margin-right: 50px;
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        .nav-button:last-of-type {
+            background-color: #42b72a;
+            color: #fff;
+            border-radius: 4px;
+            padding: 10px 30px;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .nav-button:hover {
+            text-decoration: underline;
+            transition: 2s;
+        }
+        
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-form input[type="text"] {
+            border: none;
+            font-size: 1.1rem;
+            padding: 10px;
+            width: 230px;
+            margin-right: 40px;
+            border-radius: 10px;
+        }
+    </style>
+    <nav>
+        <div class="nav-left">
+            <a class="nav-name" href="index.html">Famevest</a>
+        </div>
+        <div class="nav-right">
+            <form class="search-form">
+                <input type="text" placeholder="Search...">
+            </form>
+            <a class="nav-button" href="#">Docs</a>
+            <a class="nav-button" href="#">Features</a>
+            <a class="nav-button" href="#">Trends</a>
+            <a class="nav-button" href="#">Settings</a>
+            <a class="nav-button" href="#">Login</a>
+        </div>
+    </nav>
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            background-color: black;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 1.4rem;
+            color: white;
+        }
+        
+        .sidebar-item:hover {
+            background-color: #212121;
+            border-radius: 10px;
+        }
+        
+        .sidebar-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 20px;
+        }
+    </style>
+
+    <div class="sidebar">
+        <a href="myprofile.html">
+            <div class="sidebar-item">
+                <img src="images/profile.png" alt=""> Profile
+            </div>
+        </a>
+        <a href="wallet.html">
+            <div class="sidebar-item">
+                <img src="images/wallet.png" alt=""> Wallet
+            </div>
+        </a>
+        <a href="portfolio">
+            <div class="sidebar-item">
+                <img src="images/portfolio.png" alt=""> Portfolio
+            </div>
+        </a>
+        <div class="sidebar-item">
+            <img src="images/watchlist.png" alt=""> Watchlist
+        </div>
+        <div class="sidebar-item">
+            <img src="images/inbox.png" alt=""> Inbox
+        </div>
+        <div class="sidebar-item">
+            <img src="images/notes.png" alt=""> Notes
+        </div>
+        <div class="sidebar-item">
+            <img src="images/more.png" alt=""> More
+        </div>
+    </div>
+    <style>
+        * {
+            color: white;
+        }
+        
+        body {
+            background: black;
+        }
+        
+        .wholeprofile {
+            margin-top: 80px;
+        }
+        
+        .propic {
+            margin-left: -750px;
+            border-radius: 100px;
+        }
+        
+        .bioownership {
+            display: flex;
+            width: 800px;
+            justify-content: space-between;
+        }
+        
+        .bioownership h4 {
+            font-weight: normal;
+        }
+        
+        .marketinfo {
+            width: 800px;
+            height: 10%;
+            background: #212121;
+            border-radius: 14px;
+            display: flex;
+        }
+        
+        .circulation {
+            padding: 20px 20px 20px 20px;
+        }
+        
+        .circulation h2 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        .circulation h3 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .marketcap {
+            padding: 20px 20px 20px 90px;
+        }
+        
+        .marketcap h2 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        .marketcap h3 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .currentprice {
+            padding: 20px 0px 0px 80px;
+        }
+        
+        .currentprice h2 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        .currentprice h3 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .graphinputs {
+            display: flex;
+        }
+        
+        .maingraph {
+            margin-top: 20px;
+        }
+        
+        .maingraph img {
+            width: 48%;
+        }
+        
+        .buysell {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .buyinput {
+            width: 30%;
+            height: 100%;
+            background: #212121;
+            border-radius: 8px;
+        }
+        
+        .buyinput input {
+            display: flex;
+            width: 95%;
+            height: 50px;
+            background: #4A4A4A;
+            border-radius: 8px;
+            padding-left: 10px;
+            font-size: 1.2rem;
+        }
+        
+         ::placeholder {
+            color: white;
+            opacity: 1;
+        }
+        
+        .fcoinamount {
+            padding: 10px;
+        }
+        
+        .fcoinamount input {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .arrowfirst img {
+            position: absolute;
+            top: 109.5%;
+            left: 17.5%;
+        }
+        
+        .socialcurrencyreturn {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        
+        .socialcurrencyreturn input {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .buybalance button {
+            background-image: linear-gradient(to bottom right, #20bf55, #01baef);
+            border-radius: 7px;
+            width: 188px;
+            height: 55px;
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+        
+        .sellbalance button {
+            background-image: linear-gradient(to bottom right, #F61818, #9E00FF);
+            border-radius: 7px;
+            width: 188px;
+            height: 55px;
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+        
+        .buybalance button:hover {
+            cursor: pointer;
+        }
+        
+        .sellbalance button:hover {
+            cursor: pointer;
+        }
+        
+        .buybalance {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        
+        .sellbalance {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        
+        .lowerbuyinput {
+            display: flex;
+            align-items: center;
+        }
+        
+        .lowerbuyinput h3 {
+            padding-left: 15px;
+        }
+        
+        .lowersellinput {
+            display: flex;
+            align-items: center;
+        }
+        
+        .lowersellinput h3 {
+            padding-left: 5px;
+        }
+        
+        .arrowsecond img {
+            position: absolute;
+            top: 109.5%;
+            left: 39%;
+        }
+        
+        .sellinput {
+            width: 30%;
+            height: 100%;
+            background: #212121;
+            border-radius: 8px;
+            margin-left: 10px;
+        }
+        
+        .sellinput input {
+            display: flex;
+            width: 95%;
+            height: 50px;
+            background: #4A4A4A;
+            border-radius: 8px;
+            padding-left: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .socialcurrencyamount {
+            padding: 10px;
+        }
+        
+        .fcoinreturn {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        
+        .fcoinreturn input {
+            font-size: 1.5rem;
+        }
+        
+        .socialcurrencyamount input {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        @media (max-width: 1025px) {
+            .maingraph {
+                display: none;
+            }
+            .marketinfo {
+                margin-bottom: 20px;
+                height: 14%;
+            }
+        }
+        
+        .ProfileBody {
+            margin-left: 210px;
+        }
+    </style>
+
+    <style>
+        #loader {
+            position: fixed;
+            /* Use fixed positioning */
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+        }
+        /* Add some styling to the spinner */
+        
+        .loader {
+            border: 20px solid #f3f3f3;
+            /* Increase border width */
+            border-radius: 50%;
+            border-top: 20px solid #3498db;
+            /* Increase border width */
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <div class="wholecontent">
+        <div class="ProfileBody" display="flex">
+            <div class="wholeprofile">
+                <div class="profileimages">
+                    <img src="images/banner.png">
+                    <img class="propic" src="images/elonmusk.png" />
+                </div>
+                <div class="socialinfo">
+                    <h2>Elon Musk</h2>
+                    <h3>$elonmusk</h3>
+                    <div class="bioownership">
+                        <h4>
+                            Entrepreneur, CEO Tesla Motors,<br>Spacex, Boring company and Open AI.<br> About to buy Twitter.
+                        </h4>
+                        <h4>
+                            If you are “elonmusk” on twitter: <br> Tweet you public key. <br> You username will be transferred within<br> 24 hours via DMs.
+                        </h4>
+                    </div>
+                </div>
+                <div class="marketinfo">
+                    <div class="circulation">
+                        <h2>Coins in circulation</h2>
+                        <h3>9,956.093</h3>
+                    </div>
+                    <div class="marketcap">
+                        <h2>Market cap</h2>
+                        <h3>71,479.172 Fcoins</h3>
+                    </div>
+                    <div class="currentprice">
+                        <h2>Current price</h2>
+                        <h3>$0</h3>
+                    </div>
+                </div>
+                <div class="graphinputs"></div>
+
+                <div class="buysell">
+                    <div class="buyinput">
+                        <div class="fcoinamount">
+                            <input type="text" placeholder="Enter Fcoins" />
+                        </div>
+                        <div class="socialcurrencyreturn">
+                            <input type="text" placeholder="$elonmusk coins" value={possiblevalue} />
+                        </div>
+                        <div class="buybalance">
+                            <div class="lowerbuyinput">
+                                <button id="myButton">Buy</button>
+                                <h3>Fcoins:</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="loader" style="display: none;">
+                        <div class="loader"></div>
+                    </div>
+
+                    <div class="sellinput">
+                        <div class="socialcurrencyamount">
+                            <input type="text" placeholder="Enter $currency" />
+                        </div>
+                        <div class="fcoinreturn">
+                            <input type="text" placeholder="Fcoins in return" value={possiblefcoinvalue} />
+                        </div>
+                        <div class="sellbalance">
+                            <div class="lowersellinput">
+                                <button>
+                    Sell
+                  </button>
+                                <h3>$Balance:</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="maingraph">
+                    <img src="images/biggraph.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const button = document.getElementById('myButton');
+        const loader = document.getElementById('loader');
+
+        button.addEventListener('click', function() {
+            loader.style.display = 'block';
+            setTimeout(function() {
+                loader.style.display = 'none';
+            }, Math.floor(Math.random() * 2000) + 3000);
+        });
+    </script>
+</body>
+
+</html>

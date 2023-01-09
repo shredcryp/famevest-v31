@@ -1,0 +1,324 @@
+<?php
+$con = mysqli_connect('localhost', 'root');
+
+if (isset($_POST['email'])) {
+    mysqli_select_db($con, 'famevest');
+    $email = $_POST['email'];
+    $uname = $_POST['uname'];
+    $pword = $_POST['pword'];
+    $query = "INSERT INTO signup (email, uname, pword) VALUES ('$email', '$uname', '$pword');";
+
+    mysqli_query($con, $query);
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famevest-myprofile</title>
+</head>
+
+<body>
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #212121;
+            color: #fff;
+            height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 20%;
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-right a {
+            font-size: 1.3rem;
+        }
+
+        .nav-name {
+            font-size: 2rem;
+            margin-left: 20px;
+            text-decoration: none;
+            color: #2c87f0;
+            font-weight: bold;
+        }
+
+        .nav-button {
+            font-size: 14px;
+            margin-right: 50px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-button:last-of-type {
+            background-color: #42b72a;
+            color: #fff;
+            border-radius: 4px;
+            padding: 10px 30px;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-button:hover {
+            text-decoration: underline;
+            transition: 2s;
+        }
+
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-form input[type="text"] {
+            border: none;
+            font-size: 1.1rem;
+            padding: 10px;
+            width: 230px;
+            margin-right: 40px;
+            border-radius: 10px;
+        }
+    </style>
+    <nav>
+        <div class="nav-left">
+            <a class="nav-name" href="index.html">Famevest</a>
+        </div>
+        <div class="nav-right">
+            <form class="search-form">
+                <input type="text" placeholder="Search...">
+            </form>
+            <a class="nav-button" href="#">Docs</a>
+            <a class="nav-button" href="#">Features</a>
+            <a class="nav-button" href="#">Trends</a>
+            <a class="nav-button" href="#">Settings</a>
+            <a class="nav-button" href="#">Login</a>
+        </div>
+    </nav>
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            background-color: black;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 1.4rem;
+            color: white;
+        }
+
+        .sidebar-item:hover {
+            background-color: #212121;
+            border-radius: 10px;
+        }
+
+        .sidebar-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 20px;
+        }
+    </style>
+
+    <div class="sidebar">
+        <a href="myprofile.html">
+            <div class="sidebar-item">
+                <img src="images/profile.png" alt=""> Profile
+            </div>
+        </a>
+        <a href="wallet.html">
+            <div class="sidebar-item">
+                <img src="images/wallet.png" alt=""> Wallet
+            </div>
+        </a>
+        <a href="portfolio">
+            <div class="sidebar-item">
+                <img src="images/portfolio.png" alt=""> Portfolio
+            </div>
+        </a>
+        <div class="sidebar-item">
+            <img src="images/watchlist.png" alt=""> Watchlist
+        </div>
+        <div class="sidebar-item">
+            <img src="images/inbox.png" alt=""> Inbox
+        </div>
+        <div class="sidebar-item">
+            <img src="images/notes.png" alt=""> Notes
+        </div>
+        <div class="sidebar-item">
+            <img src="images/more.png" alt=""> More
+        </div>
+    </div>
+    <style>
+        body {
+            background: black;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.4rem;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 20px 0;
+            justify-content: center;
+            /* added this to center the input-container */
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 50px;
+        }
+
+        .container input[type="text"],
+        input[type="file"] {
+            height: 37px;
+            /* increased the height of the inputs */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 0 10px;
+            display: flex;
+            /* added this to use flexbox for the input */
+            align-items: center;
+            /* added this to center the button vertically */
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            height: 100%;
+            border-radius: 8px;
+            background: #2c87f0;
+            color: white;
+            /* added this to make the button take up the full height of the input */
+        }
+
+        textarea {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            width: 300px;
+            height: 100px;
+            resize: none;
+        }
+
+        .container {
+            margin-top: 75px;
+            margin-left: 100px;
+            height: 100%;
+        }
+
+        .submit {
+            width: 130px;
+            height: 50px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            background: #2c87f0;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <div class="container">
+        <div class="input-container">
+            <label for="profile-pic">Profile Picture:</label>
+            <input type="file" id="profile-pic" name="profile-pic" />
+        </div>
+        <div class="input-container">
+            <label for="banner-image">Banner Image:</label>
+            <input type="file" id="banner-image" name="banner-image" />
+        </div>
+        <div class="input-container">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" />
+        </div>
+        <div class="input-container">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" />
+        </div>
+        <div class="input-container">
+            <label for="name">Email:</label>
+            <input type="text" id="name" name="name" />
+        </div>
+        <div class="input-container">
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio"></textarea>
+        </div>
+        <div class="input-container">
+            <input class="submit" type="submit" id="myButton">
+            <div id="loader" style="display: none;">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        #loader {
+            position: fixed;
+            /* Use fixed positioning */
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+        }
+
+        /* Add some styling to the spinner */
+
+        .loader {
+            border: 20px solid #f3f3f3;
+            /* Increase border width */
+            border-radius: 50%;
+            border-top: 20px solid #3498db;
+            /* Increase border width */
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script>
+        const button = document.getElementById('myButton');
+        const loader = document.getElementById('loader');
+
+        button.addEventListener('click', function() {
+            loader.style.display = 'block';
+            setTimeout(function() {
+                loader.style.display = 'none';
+            }, Math.floor(Math.random() * 2000) + 3000);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famevest</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-k3xuT7T70CCzO3d7U+9gB9F7LOirZnYp1F32w6xgUzQhOiZ2nkdI0wiYbLfuJ8mv1Z/MnPHdB/ImZGcGJzfDw==" crossorigin="anonymous" />
+</head>
+
+<body>
+    <style>
+        body {
+            background: black;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        
+        * {
+            text-decoration: none;
+        }
+    </style>
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #212121;
+            color: #fff;
+            height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 20%;
+        }
+        
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-right a {
+            font-size: 1.3rem;
+        }
+        
+        .nav-name {
+            font-size: 2rem;
+            margin-left: 20px;
+            text-decoration: none;
+            color: #2c87f0;
+            font-weight: bold;
+        }
+        
+        .nav-button {
+            font-size: 14px;
+            margin-right: 50px;
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        
+        
+        .nav-button:hover {
+            text-decoration: underline;
+            transition: 2s;
+        }
+        
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-form input[type="text"] {
+            border: none;
+            font-size: 1.1rem;
+            padding: 10px;
+            width: 230px;
+            margin-right: 40px;
+            border-radius: 10px;
+        }
+        .nav-right img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <nav>
+        <div class="nav-left">
+            <a class="nav-name" href="index.html">Famevest</a>
+        </div>
+        <div class="nav-right">
+            <form class="search-form">
+                <input type="text" placeholder="Search...">
+            </form>
+            <a class="nav-button" href="#">Docs</a>
+            <a class="nav-button" href="#">Features</a>
+            <a class="nav-button" href="#">Trends</a>
+            <a class="nav-button" href="#">Settings</a>
+            <img class="nav-button" src="images/elonmusk.png" alt="">
+        </div>
+    </nav>
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            background-color: black;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 1.4rem;
+            color: white;
+        }
+        
+        .sidebar-item:hover {
+            background-color: #212121;
+            border-radius: 10px;
+        }
+        
+        .sidebar-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 20px;
+        }
+    </style>
+
+    <div class="sidebar">
+        <a href="myprofile.html">
+            <div class="sidebar-item">
+                <img src="images/profile.png" alt=""> Profile
+            </div>
+        </a>
+        <a href="wallet.html">
+            <div class="sidebar-item">
+                <img src="images/wallet.png" alt=""> Wallet
+            </div>
+        </a>
+        <a href="portfolio.html">
+            <div class="sidebar-item">
+                <img src="images/portfolio.png" alt=""> Portfolio
+            </div>
+        </a>
+        <div class="sidebar-item">
+            <img src="images/watchlist.png" alt=""> Watchlist
+        </div>
+        <div class="sidebar-item">
+            <img src="images/inbox.png" alt=""> Inbox
+        </div>
+        <div class="sidebar-item">
+            <img src="images/notes.png" alt=""> Notes
+        </div>
+        <div class="sidebar-item">
+            <img src="images/more.png" alt=""> More
+        </div>
+    </div>
+
+    <style>
+        .maincontent {
+            margin-top: 75px;
+            margin-left: 210px;
+            height: 100%;
+        }
+        
+        .titlecard {
+            margin: 0;
+            padding: 0;
+            color: white;
+            display: flex;
+        }
+        
+        .titlecard .titlepropic {
+            margin-left: 4%;
+        }
+        
+        .titlecard .titlenameusername {
+            margin-left: 9%;
+        }
+        
+        .titlecard .titletwentyfourhrchange {
+            margin-left: 10%;
+        }
+        
+        .titlecard .titlemarketcap {
+            margin-left: 7%;
+        }
+        
+        .titlecard .titlesevendgraph {
+            margin-left: 11%;
+        }
+        
+        .titlecard .titleprice {
+            margin-left: 13%;
+        }
+        
+        .card {
+            width: 90%;
+            height: 120px;
+            margin-bottom: 1%;
+            position: relative;
+            color: white;
+            display: flex;
+            background: #212121;
+            align-items: center;
+            border-radius: 10px;
+        }
+        
+        .card .propic {
+            margin-left: 3%;
+        }
+        
+        .card .nameusername {
+            margin-left: 7%;
+        }
+        
+        .card .twentyfourhrchange {
+            margin-left: 10%;
+        }
+        
+        .card .marketcap {
+            margin-left: 10%;
+        }
+        
+        .card .sevendgraph {
+            margin-left: 10%;
+        }
+        
+        .card .price {
+            margin-left: 10%;
+        }
+        
+        @media (max-width: 1500px) {
+            .card .marketcap {
+                display: none;
+            }
+            .titlecard .titlemarketcap {
+                display: none;
+            }
+            .titlecard .titleprice {
+                margin-left: 16%;
+            }
+        }
+        
+        .card a {
+            cursor: pointer;
+        }
+        
+        @media (max-width: 1150px) {
+            .card .twentyfourhrchange {
+                display: none;
+            }
+            .titlecard .titletwentyfourhrchange {
+                display: none;
+            }
+            .titlecard .titleprice {
+                margin-left: 17%;
+            }
+            .titlecard .titlesevendgraph {
+                margin-left: 19%;
+            }
+        }
+    </style>
+
+    <div class="maincontent">
+        <div class="titlecard">
+            <div class="titlepropic">
+                <h3>Propic</h3>
+            </div>
+            <div class="titlenameusername">
+                <h3>Name</h3>
+            </div>
+            <div class="titletwentyfourhrchange">
+                <h3>24hr change</h3>
+            </div>
+            <div class="titlemarketcap">
+                <h3>Market cap</h3>
+            </div>
+            <div class="titlesevendgraph">
+                <h3>7d graph</h3>
+            </div>
+            <div class="titleprice">
+                <h3>Price</h3>
+            </div>
+        </div>
+        <a href="profile.html">
+            <div class="card">
+                <div class="propic">
+                    <img src="images/elonmusk.png" width="100px" height="100px" alt="">
+                </div>
+                <div class="nameusername">
+                    <h3>Elon Musk</h3>
+                    <h3>@elonmusk</h3>
+                </div>
+                <div class="twentyfourhrchange">
+                    <h3>+12.34</h3>
+                </div>
+                <div class="marketcap">
+                    <h3>1,200,000</h3>
+                </div>
+                <div class="sevendgraph">
+                    <img src="images/smallgraph.png" height="50px" alt="">
+                </div>
+                <div class="price">
+                    <h3>$412.38</h3>
+                </div>
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>
